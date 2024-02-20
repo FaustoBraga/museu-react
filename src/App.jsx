@@ -5,12 +5,18 @@ import 'primeicons/primeicons.css';
 import 'primeflex/primeflex.css';
 import '../public/digital.css';
 import { queryClient } from './service';
+import { useState } from 'react';
 
-function App() {
+const App = () => {
+  const [ estaLogado, setEstalogado ] = useState(true);
+  const contexts = {
+    estaLogado,
+    setEstalogado
+  }
   return(
     <>
       <QueryClientProvider client={queryClient}>
-        <AuthContext.Provider value={{}}>
+        <AuthContext.Provider value={contexts}>
             <Ways />
         </AuthContext.Provider>
       </QueryClientProvider>
@@ -18,4 +24,4 @@ function App() {
   );
 }
 
-export default App
+export default App;

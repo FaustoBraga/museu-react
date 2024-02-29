@@ -2,8 +2,7 @@
 const PageVisitantes = () => {
     return(
         <>
-            <h1></h1>
-            
+            <h1>Visitantes</h1>
         </>
     )
 }

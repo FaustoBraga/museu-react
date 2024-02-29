@@ -1,26 +1,22 @@
-import { QueryClientProvider } from 'react-query';
-import { AuthContext } from './contexts/AuthContext';
-import Ways from './routes';
-import 'primeicons/primeicons.css';
-import 'primeflex/primeflex.css';
-import '../public/digital.css';
-import { queryClient } from './service';
-import { useState } from 'react';
+
+import { useState } from "react";
+import { AuthContext } from "./contexts/AuthContext";
+import Ways from "./routes";
+
+import "primereact/resources/primereact.min.css";
+import "primereact/resources/themes/md-light-indigo/theme.css"
 
 const App = () => {
-  const [ estaLogado, setEstalogado ] = useState(true);
+  const [estaLogado, setEstaLogado] = useState(true);
   const contexts = {
     estaLogado,
-    setEstalogado
+    setEstaLogado
   }
-  return(
-    <>
-      <QueryClientProvider client={queryClient}>
-        <AuthContext.Provider value={contexts}>
-            <Ways />
-        </AuthContext.Provider>
-      </QueryClientProvider>
-    </>
+  return (
+      <AuthContext.Provider value={contexts}>
+        <Ways />
+      </AuthContext.Provider>
+
   );
 }
 
